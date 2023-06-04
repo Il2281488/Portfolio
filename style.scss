@@ -1,0 +1,411 @@
+
+
+@font-face {
+    font-family: 'RalewayMedium';
+    src: url('fonts/Raleway-Medium.eot');
+    src: url('fonts/Raleway-Medium.eot?#iefix') format('embedded-opentype'),
+        url('fonts/Raleway-Medium.woff2') format('woff2'),
+        url('fonts/Raleway-Medium.woff') format('woff'),
+        url('fonts/Raleway-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'RalewayRegular';
+    src: url('fonts/Raleway-Regular.eot');
+    src: url('fonts/Raleway-Regular.eot?#iefix') format('embedded-opentype'),
+        url('fonts/Raleway-Regular.woff2') format('woff2'),
+        url('fonts/Raleway-Regular.woff') format('woff'),
+        url('fonts/Raleway-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap');
+
+
+$black: #3e3e3e;
+$dark_blue: #353541;
+$pink: #fb6470;
+$dark_pink: #b95460;
+$white: #f9f9f9;
+$gray: #bcbcc0;
+
+$main_color: $dark_blue;
+$secondary_colorA: $pink;
+$secondary_colorB: $black;
+
+@mixin button($margin-top, $padding, $font-size, $border-radius, $padding-active){
+			text-decoration: none;
+			font-size: $font-size;
+			color: #fff;
+			padding: $padding;
+			border-radius: $border-radius;
+			background-color: $secondary_colorA;
+			transition: .3s linear;
+
+			display: inline-block;
+			margin-top: $margin-top;
+
+			&:hover{
+				background-color:$dark_pink;
+			}
+
+			&:active{
+				padding: $padding-active;
+			}
+		}
+
+
+@mixin h2($margin-top){
+		color: $black;
+		font-size: 32px;
+		font-weight: 600;
+		display: inline-block;
+		margin-top:$margin-top;
+
+		&::after{
+				content: " ";
+				display: block;
+				width: 75px;
+				padding-top: 15px;
+				border-bottom: 2px solid $secondary_colorA;
+			}
+	}
+
+
+body {
+	margin: 0;
+
+	font-family: 'Raleway', sans-serif;
+	font-size: 14px;
+	color: $black;
+	-webkit-font-smoothing: antialiased;
+	background-color: #fff;
+}
+
+.container{
+	width: 100%;
+	max-width: 1288px;
+	padding: 0 84px;
+	// position:relative;
+}
+
+
+*,
+*:before ,
+*:after {
+	box-sizing: border-box;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+}
+
+p{
+	margin: 0;
+}
+
+header.header{
+	
+}
+
+header.header__2{
+	// background: $main_color;
+	background: url(img/1.jpg) center repeat no-repeat;
+	color: #fff;
+	font-size: 36px;
+	font-weight:500;
+	height: 75vh;
+
+	position: relative;
+
+	// nav{
+	// 	float: right;
+
+	// 	a{
+	// 		text-decoration: none;
+	// 		font-weight: bold;
+	// 		color: $secondary_colorB;
+	// 	}
+	// }
+
+	.initials{
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(0, -50%);
+		text-align: center;
+
+		h1{
+			font-size: 48px;
+			border-bottom: 2px solid $secondary_colorA;
+			border-top: 2px solid $secondary_colorA;
+			display: inline;
+			padding:10px 0;
+			line-height: 1.75;
+
+
+		}
+
+		p{
+			font-size: 18px;
+			line-height: 1.75;
+		}
+
+		a{
+			@include button(40px, 16px 44px, 22px, 5px, 14px 44px);
+		}
+	}
+}
+
+.about{
+	position:relative;
+	background: $white;
+	position:relative;
+	h2{
+		@include h2(180px);
+	}
+
+	p{
+		font-weight: 500;
+		font-size: 16px;
+		color: $secondary_colorB;
+		opacity: .8;
+		max-width: 40%;
+		margin-top: 40px;
+	}
+
+	.info{
+		margin-top: 20px;
+		p{
+			background: #fff;
+			padding:15px 0;
+			margin-top:2px;
+
+			opacity: 1;
+			font-weight: 600;
+
+			font{
+				font-weight: 500;
+			}
+
+			a{ 
+				text-decoration: underline 1px solid $secondary_colorB;
+				color: $secondary_colorB;
+				font-weight: 500;
+			 }
+		}
+	}
+
+	img{
+		position: absolute;
+		bottom:0;
+		left: 50%;
+	}
+}
+
+
+.portfolio_intro{
+	h2{
+		@include h2(80px);
+	}
+
+	p{
+		font-weight: 500;
+		font-size: 16px;
+		color: $secondary_colorB;
+		opacity: .8;
+		margin-top: 40px;
+	}
+
+	.portfolio{
+		display: flex;
+		justify-content: space-around;
+		flex-wrap: wrap;
+		.portfolio_item{
+			margin: 60px 10px 0 10px;
+			display: inline-block;
+			position:relative;
+			
+	
+			&:after{
+				content: "";
+				position:absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 99%;
+				background-color: $secondary_colorB;
+				z-index: 1;
+				opacity: 0;
+				transition: opacity .3s linear;
+			}
+	
+			&:hover:after{
+				opacity: .7;
+			}
+	
+			&:hover .portfolio_content{
+				opacity: 1;
+			}
+	
+			img{
+				width: 300px;
+				height: 300px;
+			}
+	
+			.portfolio_content{
+				position:absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				display: flex;
+				flex-direction: column;
+				text-align: center;
+				z-index: 2;
+				opacity: 0;
+				transition: opacity .3s linear;
+				h4{
+					color: $white;
+					font-weight: 500;
+					font-size: 18px;
+				}
+	
+				p{
+					font-weight:500;
+					font-size: 16px;
+					color: $white;
+				}
+			}
+		}
+	}
+}
+
+
+.contacts{
+	width: 55%;
+	margin: 80px 0;
+	position:relative;
+	display: inline-block;
+	vertical-align: top;
+
+	&::after{
+		content: "";
+		border-right: 1px solid $gray;
+		height: 250px;
+		position: absolute;
+		top:50%;
+		transform: translateY(-50%);
+		right: 0;
+	}
+
+	h3{
+		font-weight: 500;
+		font-size: 22px;
+		display: inline-block;
+		}
+
+	form{
+		text-align: right;
+		width: 75.7%;
+		
+
+		input{
+			border: 1px solid $main_color;
+			padding: 10px;
+			font-weight: 500;
+			font-size: 14px;
+			width: 100%;
+			margin-top: 20px;
+			display: flex;
+			flex-flow: column wrap;
+
+			&:focus{
+				outline: 0;
+			}
+		}
+
+		textarea{
+			text-decoration: none;
+			height: 90px;
+			vertical-align: top;
+			grid-column-start: 1;
+			resize: none;
+			border: 1px solid $main_color;
+			padding: 10px;
+			font-weight: 500;
+			font-size: 14px;
+			width: 100%;
+			margin-top: 20px;
+			display: flex;
+			flex-flow: column wrap;
+
+			&:focus{
+				outline: 0;
+			}
+		}
+
+		.button{
+			@include button(20px, 10px 18px, 16px, 0, 8px 18px);
+			width: auto;
+			border:0;
+			text-decoration: none;
+		}
+	}
+}
+
+
+.aligner{
+	display: flex;
+	flex-align: center;
+
+	.messangers{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		.email, .whatsapp{
+			display: flex;
+			flex-direction: row;
+			margin: 25px 0;
+			img{
+
+				width: 30px;
+				margin:10px 30px;
+			}
+
+			.text{
+
+				p{
+				font-weight: 500;
+				font-size: 18px;
+				color: $secondary_colorB;
+				margin: 5px;
+				}
+
+				a{
+				margin: 5px;
+				font-weight: 500;
+				font-size: 14px;
+				color: $secondary_colorB;
+				opacity: .8;
+				transition: .3s linear;
+
+					&:hover{
+						color: $secondary_colorA;
+					}
+				}
+			}
+		}
+
+		.whatsapp{
+			img{
+				width: 28px;
+			}
+		}
+	}
+}

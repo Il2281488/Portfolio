@@ -111,16 +111,147 @@ p{
 }
 
 header.header{
-	
+	background-color: $main_color;
+	border-bottom: 2px solid $secondary_colorA;
+	position: relative;
+
+	.nav__toggle{
+		position: fixed;
+		z-index: 1000;
+
+		display: none;
+		justify-content: center;
+		align-items: center;
+		top: 5px;
+		left: 30px;
+		background: none;
+		cursor: pointer;
+
+		background-color: $main_color;
+		border: 1px solid $secondary_colorA;
+		width: 70px;
+		height: 70px;
+		border-radius: 50%;
+
+
+		.nav__toggle__inner{
+			position: absolute;
+			// top: 35px;
+			// left: 40px;
+			border: none;
+
+			content: "";
+			background-color: #fff;
+			width: 45px;
+			height: 4px;
+
+			&:before, &:after{
+			position: absolute;
+			content: "";
+			background-color: #fff;
+			width: 45px;
+			height: 4px;
+			transition: transform .3s linear;
+			}
+
+			&:before{
+				top: 16px;
+				left: 0;
+			}
+
+			&:after{
+				left: 0;
+				top: -16px;
+			}
+		}
+		
+	}
+
+	.nav__toggle.visible{
+		display: flex;
+	}
+
+	.nav__toggle.active{
+		.nav__toggle__inner{
+			background: none;
+			&:before{
+				transform: rotate(45deg);
+				top: 0;
+			}
+
+			&:after{
+				transform: rotate(-45deg);
+				top: 0;
+			}
+		}
+	}
+
+	div{
+		
+		nav{
+			display: flex;
+			justify-content: space-between;
+			a{
+				text-decoration: none;
+				padding: 20px 25px;
+				color: #fff;
+				font-size: 26px;
+				white-space: nowrap;
+				transition: .3s ease-in;
+
+				&:hover{
+					color: #d6d0d0;
+					text-shadow: 0 0 5px #fff;
+				}
+
+				&:active{
+					color: #d6d0d0;
+					text-shadow: 0 0 5px #fff;
+				}
+			}
+		}
+
+		nav.active{
+			z-index: 1000;
+			position: fixed;
+			display: flex;
+			flex-direction: column;
+
+			border: 2px solid $secondary_colorA;
+			background-color: $main_color;
+
+			width: auto;
+
+			top: 80px;
+			left: 0;
+		}
+	}
+}
+
+header.header.fixed{
+	position: fixed;
+	z-index: 1000;
+	width: 100%;
+
+	div{
+		nav{
+			a{
+				padding: 10px 25px;
+			}
+		}
+	}
 }
 
 header.header__2{
-	// background: $main_color;
-	background: url(img/1.jpg) center repeat no-repeat;
+	// background: url(img/1.jpg) center no-repeat;
 	color: #fff;
 	font-size: 36px;
 	font-weight:500;
-	height: 75vh;
+	// height: 75vh;
+
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
 
 	position: relative;
 
@@ -133,8 +264,12 @@ header.header__2{
 	// 		color: $secondary_colorB;
 	// 	}
 	// }
+	
+		img{
+			// width: 1em;
+		}
 
-	.initials{
+		.initials{
 		position: absolute;
 		left: 50%;
 		top: 50%;
@@ -149,6 +284,8 @@ header.header__2{
 			padding:10px 0;
 			line-height: 1.75;
 
+			white-space: nowrap;
+
 
 		}
 
@@ -160,13 +297,13 @@ header.header__2{
 		a{
 			@include button(40px, 16px 44px, 22px, 5px, 14px 44px);
 		}
-	}
+		}
+	
 }
 
 .about{
 	position:relative;
 	background: $white;
-	position:relative;
 	h2{
 		@include h2(180px);
 	}
@@ -308,7 +445,7 @@ header.header__2{
 		font-weight: 500;
 		font-size: 22px;
 		display: inline-block;
-		}
+	}
 
 	form{
 		text-align: right;
@@ -362,15 +499,24 @@ header.header__2{
 
 .aligner{
 	display: flex;
-	flex-align: center;
+	flex-direction: column;
+	align-items: center;
+	margin: 60px 0 40px 0;
+
+	h3{
+		font-weight: 500;
+		font-size: 22px;
+		// display: inline-block;	
+	}
 
 	.messangers{
+		
+
 		display: flex;
-		flex-direction: column;
-		justify-content: center;
+		// flex-direction: column;
+		justify-content: space-between;
 		.email, .whatsapp{
 			display: flex;
-			flex-direction: row;
 			margin: 25px 0;
 			img{
 
@@ -406,6 +552,77 @@ header.header__2{
 			img{
 				width: 28px;
 			}
+		}
+	}
+}
+
+@media (max-width: 768px){
+	.container{
+		padding: 0 20px;
+	}
+
+
+	header.header{
+		div{
+			nav{
+				flex-wrap: wrap;
+				a{
+					width: 40%;
+				}
+			}
+		}
+	}
+
+	header.header__2{	
+			.initials{
+			left: 35%;
+			top: 50%;
+			transform: translate(0, -50%);
+			}
+		
+	}
+}
+
+@media(max-width: 560px){
+	.about{	
+		p{
+			max-width: 100%;
+		}
+		img{
+			position: static;
+			width: 100%;
+		}
+	}
+}
+
+@media (max-width: 480px){
+	header.header{
+		.nav__toggle{
+			display: flex;
+		}
+		div{
+			
+			nav{
+				display: none;
+				a{
+
+				}
+			}
+		}
+	}
+
+	header.header__2{	
+		.initials{
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, 0);
+		}
+	
+	}
+
+	.aligner{
+		.messangers{
+			flex-direction: column;
 		}
 	}
 }

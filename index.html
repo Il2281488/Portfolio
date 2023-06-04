@@ -5,36 +5,50 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>DreameFlow</title>
+    <title>Petrukhin Portfolio</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
   </head>
 
 <body>
 	
 	<div class="main">
 		
-		<header class="header">
-			<a href="#">1</a>
-		</header>
+		<header class="header" id="home">
+			<button type="button" class="nav__toggle">
+				<div class="nav__toggle__inner"></div>
+			</button>
 
-		<header class="header__2">
-			
-
-			<!-- <nav class="nav">
-				<a href="#">Домой</a>
-				<a href="#">NoName</a>
-				<a href="#">NoName</a>
-				<a href="#">NoName</a>
-				<a href="#">NoName</a>
-			</nav> -->
-
-			<div class="initials">
-				<h1>Ilya Petrukhin</h1>
-				<p>#Frontend Deweloper</p>
-				<a href="mailto:ilya.alekseevich.00@list.ru">Hire Me!</a>
+			<div class="container">
+				
+				<nav >
+					<a href="#home">Home</a>
+					<a href="#aboutMe">About Me</a>
+					<a href="#portfolio">Portfolio</a>
+					<a href="#contacts">Contacts</a>
+				</nav>
 			</div>
 		</header>
 
-		<div class="about">
+		<header class="header__2">
+
+				<img src="img/1.jpg" alt="">
+
+				<!-- <nav class="nav">
+					<a href="#">Домой</a>
+					<a href="#">NoName</a>
+					<a href="#">NoName</a>
+					<a href="#">NoName</a>
+					<a href="#">NoName</a>
+				</nav> -->
+
+				<div class="initials">
+					<h1>Ilya Petrukhin</h1>
+					<p>#Frontend Deweloper</p>
+					<a href="mailto:ilya.alekseevich.00@list.ru">Hire Me!</a>
+				</div>
+		</header>
+
+		<div id="aboutMe" class="about">
 			<div class="container">
 				<h2>About Me</h2>
 				<p>Hi! I'm beginner frontend deweloper. This is my first portfolio page. I'll tell about me and show my work on this site.</p>
@@ -44,7 +58,7 @@
 					<p>Age: <font>22 y.o.</font></p>
 					<p>Email: <a href="mailto:ilya.alekseevich.00@list.ru">ilya.alekseevich.00@list.ru</a></p>
 					<p>City: <font>Moscow</font></p>
-					<p>Exp: <font>Beginner</font></p>
+					<p>Exp: <font>Junior</font></p>
 				</div>
 
 				<img src="img/2.jpg" alt="">
@@ -52,7 +66,7 @@
 			</div>
 		</div>
 
-		<div class="container">
+		<div id="portfolio" class="container">
 
 			<div class="portfolio_intro">
 
@@ -60,7 +74,7 @@
 				<p>This is all of my works on this moment. You can view them and dive me feedback at the end of the site.</p>
 
 				<div class="portfolio">
-					<a target="_blank" href="../constructon/proj/index.html" class="portfolio_item">
+					<a target="_blank" href="https://il2281488.github.io/Construction/" class="portfolio_item">
 						<img src="img/portfolio_img_1.jpg" alt="">
 							<div class="portfolio_content">
 								<h4 class="works_title">Construction</h4>
@@ -68,7 +82,7 @@
 							</div>
 					</a>
 	
-					<a target="_blank" href="../medical/index.html" class="portfolio_item">
+					<a target="_blank" href="https://il2281488.github.io/Medical/" class="portfolio_item">
 						<img src="img/portfolio_img_2.jpg" alt="">
 							<div class="portfolio_content">
 								<h4 class="works_title">Medical</h4>
@@ -95,46 +109,54 @@
 			</div>
 		</div>
 
-		<div class="container">
-			<div class="aligner">
-				<div class="contacts">
-					<h3>Leave a Message</h3>
-					<form action="#">
-						
-						<input type="text" name="Name" autocomplete required placeholder="Name*">
-						<input type="text" name="Phone" autocomplete required placeholder="Phone number*">
-						<textarea type="text" name="Message" autocomplete required placeholder="Message*"></textarea>
-						<input class="button" type="submit" name="" value="Hire Me!">
-					</form>
-	
-					
-				</div>
-	
-				<div class="messangers">
-    				<div class="email">
-    					<img src="img/email_icon.png" alt="">
-    					<div class="text">
-        					<p>Email</p>
-        					<a href="mailto:ilya.alekseevich.00@list.ru">ilya.alekseevich.00@list.ru</a>
-   						</div>
-    				</div>
-	
-    				<div class="whatsapp">
-    					<img src="img/whatsapp_icon.png" alt="">
-    					<div class="text">
-        					<p>Whatsapp</p>
-        					<a target="_blank" href="https://wa.me/+79275577323">8 (927) 55 77 323</a>
-    					</div>
-    				</div>
-				</div>
+			<div id="contacts" class="container">
+				
+				<div class="aligner">
 
+					<h3>Leave a Message</h3>
+
+					<!-- <div class="contacts">
+						<h3>Leave a Message</h3>
+						<form action="#">
+
+							<input type="text" name="Name" autocomplete required placeholder="Name*">
+							<input type="text" name="Phone" autocomplete required placeholder="Phone number*">
+							<textarea type="text" name="Message" autocomplete required placeholder="Message*"></textarea>
+							<input class="button" type="submit" name="" value="Hire Me!">
+						</form>
+					
+
+					</div> -->
+				
+					<div class="messangers">
+
+
+    					<div class="email">
+    						<img src="img/email_icon.png" alt="">
+    						<div class="text">
+        						<p>Email</p>
+        						<a href="mailto:ilya.alekseevich.00@list.ru">ilya.alekseevich.00@list.ru</a>
+   							</div>
+    					</div>
+					
+    					<div class="whatsapp">
+    						<img src="img/whatsapp_icon.png" alt="">
+    						<div class="text">
+        						<p>Whatsapp</p>
+        						<a target="_blank" href="https://wa.me/+79275577323">8(927)-55-77-323</a>
+    						</div>
+    					</div>
+					</div>
+
+				</div>
 			</div>
-		</div>
 
 
 
 
 	</div>
+
+	<script src="app.js"></script>
 
 </body>
 

@@ -86,11 +86,11 @@ onScroll();
             $('#portfolio').addClass('show');
         }
 
-        if($('#contacts').offset().top < scrollHeight() + 700){
+        if($('#contacts').offset().top < scrollHeight() + 600){
             $('#contacts').addClass('show');
         }
 
-        console.log($('#contacts').offset().top, scrollHeight() + 500)   
+        console.log($('#contacts').offset().top, scrollHeight() + 650)   
     }
 
     $(window).scroll(showFunctions).resize(showFunctions);

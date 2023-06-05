@@ -74,23 +74,23 @@ onScroll();
     // --------------------- show animate
 
     function showFunctions () {
-        if ($('.header__2').offset().top < scrollHeight()) {
+        if ($('.header__2').offset().top < scrollHeight() + 300) {
             $('.header__2').addClass('show');
         }
 
-        if ($('.about').offset().top < scrollHeight()) {
+        if ($('.about').offset().top < scrollHeight() +300) {
             $('.about').addClass('show');
         }
 
-        if ($('#portfolio').offset().top < scrollHeight()){
+        if ($('#portfolio').offset().top < scrollHeight() +300){
             $('#portfolio').addClass('show');
         }
 
-        if($('#contacts').offset().top < scrollHeight()){
+        if($('#contacts').offset().top - 600 < scrollHeight()){
             $('#contacts').addClass('show');
         }
 
-        console.log($('#contacts').offset().top, scrollHeight() + 650)   
+        console.log($('#contacts').offset().top - 600, scrollHeight())   
     }
 
     $(window).scroll(showFunctions).resize(showFunctions);

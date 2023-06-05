@@ -86,9 +86,9 @@ onScroll();
             $('#portfolio').addClass('show');
         }
 
-        if($('#contacts').offset().top - 600 < scrollHeight()){
-            $('#contacts').addClass('show');
-        }
+        // if($('#contacts').offset().top - 600 < scrollHeight()){
+        //     $('#contacts').addClass('show');
+        // }
 
         console.log($('#contacts').offset().top - 600, scrollHeight())   
     }

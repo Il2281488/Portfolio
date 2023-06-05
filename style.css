@@ -542,14 +542,6 @@ header.header__2.show {
   width: 28px;
 }
 
-#contacts {
-  opacity: 0;
-  -webkit-transform: translateX(100px);
-          transform: translateX(100px);
-  -webkit-transition: 0.2s ease-in;
-  transition: 0.2s ease-in;
-}
-
 #contacts.show {
   opacity: 1;
   -webkit-transform: translateX(0);

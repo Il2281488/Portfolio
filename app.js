@@ -74,19 +74,19 @@ onScroll();
     // --------------------- show animate
 
     function showFunctions () {
-        if ($('.header__2').offset().top < scrollHeight() + 150) {
+        if ($('.header__2').offset().top < scrollHeight() + 300) {
             $('.header__2').addClass('show');
         }
 
-        if ($('.about').offset().top < scrollHeight() +150) {
+        if ($('.about').offset().top < scrollHeight() +300) {
             $('.about').addClass('show');
         }
 
-        if ($('#portfolio').offset().top < scrollHeight() +150){
+        if ($('#portfolio').offset().top < scrollHeight() +300){
             $('#portfolio').addClass('show');
         }
 
-        if($('#contacts').offset().top < scrollHeight() + 500){
+        if($('#contacts').offset().top < scrollHeight() + 700){
             $('#contacts').addClass('show');
         }
 

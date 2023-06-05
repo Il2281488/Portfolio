@@ -38,9 +38,19 @@ onScroll();
     // --------------------- nav toggle
 
     $('.nav__toggle').click(function(){
-        $('.nav__toggle').toggleClass('active');
-        $('nav').toggleClass('active');
-    });
+
+        if ($('.nav__toggle').hasClass('active') == false && $('nav').hasClass('active') == false) {
+
+            $('.nav__toggle').addClass('active');
+            $('nav').addClass('active');
+            $('nav.active').animate({ opacity: 1, height: 'slow' }, 'slow');
+
+        } else {
+            $('.nav__toggle').removeClass('active');
+            $('nav.active').animate({ opacity: 0, height: 'slow' }, 'slow'); 
+            $('nav').removeClass('active');
+        }
+    }); 
 
 
     // ---------------------- smooth scroll
@@ -59,6 +69,38 @@ onScroll();
             })
         })
     })
+
+
+    // --------------------- show animate
+
+    function showFunctions () {
+        if ($('.header__2').offset().top < scrollHeight() + 150) {
+            $('.header__2').addClass('show');
+        }
+
+        if ($('.about').offset().top < scrollHeight() +150) {
+            $('.about').addClass('show');
+        }
+
+        if ($('#portfolio').offset().top < scrollHeight() +150){
+            $('#portfolio').addClass('show');
+        }
+
+        if($('#contacts').offset().top < scrollHeight() + 500){
+            $('#contacts').addClass('show');
+        }
+
+        console.log($('#contacts').offset().top, scrollHeight() + 500)   
+    }
+
+    $(window).scroll(showFunctions).resize(showFunctions);
+
+    showFunctions();
+
+
+
+
+
 
 
 

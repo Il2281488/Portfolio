@@ -141,6 +141,7 @@ header.header div nav a:active {
   text-shadow: 0 0 5px #fff;
 }
 header.header div nav.active {
+  opacity: 0;
   z-index: 1000;
   position: fixed;
   display: -webkit-box;
@@ -167,6 +168,11 @@ header.header.fixed div nav a {
 }
 
 header.header__2 {
+  opacity: 0;
+  -webkit-transform: translateX(-100px);
+          transform: translateX(-100px);
+  -webkit-transition: 0.2s ease-in;
+  transition: 0.2s ease-in;
   color: #fff;
   font-size: 36px;
   font-weight: 500;
@@ -219,7 +225,18 @@ header.header__2 .initials a:active {
   padding: 14px 44px;
 }
 
+header.header__2.show {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
 .about {
+  opacity: 0;
+  -webkit-transform: translateX(100px);
+          transform: translateX(100px);
+  -webkit-transition: 0.2s ease-in;
+  transition: 0.2s ease-in;
   position: relative;
   background: #f9f9f9;
 }
@@ -268,6 +285,12 @@ header.header__2 .initials a:active {
   position: absolute;
   bottom: 0;
   left: 50%;
+}
+
+.about.show {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
 }
 
 .portfolio_intro h2 {
@@ -356,6 +379,20 @@ header.header__2 .initials a:active {
   font-weight: 500;
   font-size: 16px;
   color: #f9f9f9;
+}
+
+#portfolio {
+  opacity: 0;
+  -webkit-transform: translateX(-100px);
+          transform: translateX(-100px);
+  -webkit-transition: 0.2s ease-in;
+  transition: 0.2s ease-in;
+}
+
+#portfolio.show {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
 }
 
 .contacts {
@@ -505,6 +542,20 @@ header.header__2 .initials a:active {
   width: 28px;
 }
 
+#contacts {
+  opacity: 0;
+  -webkit-transform: translateX(100px);
+          transform: translateX(100px);
+  -webkit-transition: 0.2s ease-in;
+  transition: 0.2s ease-in;
+}
+
+#contacts.show {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
 @media (max-width: 768px) {
   .container {
     padding: 0 20px;
@@ -524,6 +575,9 @@ header.header__2 .initials a:active {
   }
 }
 @media (max-width: 560px) {
+  .about h2 {
+    margin-top: 60px;
+  }
   .about p {
     max-width: 100%;
   }

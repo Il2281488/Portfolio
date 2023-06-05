@@ -212,6 +212,8 @@ header.header{
 		}
 
 		nav.active{
+			opacity: 0;
+
 			z-index: 1000;
 			position: fixed;
 			display: flex;
@@ -243,6 +245,12 @@ header.header.fixed{
 }
 
 header.header__2{
+	opacity: 0;
+	transform: translateX(-100px);
+	transition:0.2s ease-in;
+
+
+
 	// background: url(img/1.jpg) center no-repeat;
 	color: #fff;
 	font-size: 36px;
@@ -301,7 +309,17 @@ header.header__2{
 	
 }
 
+header.header__2.show{
+	opacity: 1;
+	transform: translateX(0);
+}
+
 .about{
+	opacity: 0;
+	transform: translateX(100px);
+	transition:0.2s ease-in;
+
+
 	position:relative;
 	background: $white;
 	h2{
@@ -344,6 +362,11 @@ header.header__2{
 		bottom:0;
 		left: 50%;
 	}
+}
+
+.about.show{
+	opacity: 1;
+	transform: translateX(0);
 }
 
 
@@ -423,6 +446,16 @@ header.header__2{
 	}
 }
 
+#portfolio{
+	opacity: 0;
+	transform: translateX(-100px);
+	transition:0.2s ease-in;
+}
+
+#portfolio.show{
+	opacity: 1;
+	transform: translateX(0);
+}
 
 .contacts{
 	width: 55%;
@@ -496,7 +529,6 @@ header.header__2{
 	}
 }
 
-
 .aligner{
 	display: flex;
 	flex-direction: column;
@@ -556,6 +588,17 @@ header.header__2{
 	}
 }
 
+#contacts{
+	opacity: 0;
+	transform: translateX(100px);
+	transition:0.2s ease-in;
+}
+
+#contacts.show{
+	opacity: 1;
+	transform: translateX(0);
+}
+
 @media (max-width: 768px){
 	.container{
 		padding: 0 20px;
@@ -585,6 +628,11 @@ header.header__2{
 
 @media(max-width: 560px){
 	.about{	
+
+		h2{
+			margin-top: 60px;
+		}
+
 		p{
 			max-width: 100%;
 		}

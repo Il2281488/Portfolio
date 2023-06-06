@@ -1,4 +1,4 @@
-$('dociment').ready( function() {
+$( function() {
 
     // ---------------------- header
 
@@ -7,15 +7,16 @@ $('dociment').ready( function() {
     let hasClassNavToggleVisible = $('.nav__toggle').hasClass('visible');
     let hasClassNavToggleActive = $('.nav__toggle').hasClass('active');
 
+    console.log (hasClassNavToggleVisible, $(window).width(), headerHeight)
+
 
 
 function onScroll () {
-    $(window).scroll(function () {
         if ($(window).width() <= 768 && scrollHeight() >= headerHeight && hasClassNavToggleVisible == false){
             $('.nav__toggle').addClass('visible');
         }
         
-        if (scrollHeight() < headerHeight  && $('.nav__toggle').hasClass('active') == false) {
+        if (scrollHeight() < headerHeight  && hasClassNavToggleActive == false && $('nav').hasClass('active') == false) {
             $('.nav__toggle').removeClass('visible');
         }
         
@@ -28,9 +29,10 @@ function onScroll () {
         }
 
         
-    });
+    
 }
 
+$(window).scroll(onScroll).resize(onScroll);
 
 onScroll();
 
@@ -43,11 +45,11 @@ onScroll();
 
             $('.nav__toggle').addClass('active');
             $('nav').addClass('active');
-            $('nav.active').animate({ opacity: 1, height: 'slow' }, 'slow');
+            $('nav').addClass('show');
 
         } else {
             $('.nav__toggle').removeClass('active');
-            $('nav.active').animate({ opacity: 0, height: 'slow' }, 'slow'); 
+            $('nav').removeClass('show');
             $('nav').removeClass('active');
         }
     }); 
@@ -86,11 +88,13 @@ onScroll();
             $('#portfolio').addClass('show');
         }
 
-        // if($('#contacts').offset().top - 600 < scrollHeight()){
-        //     $('#contacts').addClass('show');
-        // }
+        if ($('#portfolio__item__1').offset().top < scrollHeight() + 300){
+            $('#portfolio__item__1').addClass('show');
+        }
 
-        console.log($('#contacts').offset().top - 600, scrollHeight())   
+        if ($('#portfolio__item__2').offset().top < scrollHeight() + 300){
+            $('#portfolio__item__2').addClass('show');
+        }
     }
 
     $(window).scroll(showFunctions).resize(showFunctions);

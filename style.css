@@ -69,6 +69,7 @@ header.header .nav__toggle {
   width: 70px;
   height: 70px;
   border-radius: 50%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 header.header .nav__toggle .nav__toggle__inner {
   position: absolute;
@@ -124,6 +125,7 @@ header.header div nav {
           justify-content: space-between;
 }
 header.header div nav a {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   text-decoration: none;
   padding: 20px 25px;
   color: #fff;
@@ -216,6 +218,7 @@ header.header__2 .initials p {
   line-height: 1.75;
 }
 header.header__2 .initials a {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   text-decoration: none;
   font-size: 22px;
   color: #fff;
@@ -285,10 +288,18 @@ header.header__2.show {
   font-weight: 500;
 }
 .about .info p a {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-text-decoration: underline 1px solid #3e3e3e;
           text-decoration: underline 1px solid #3e3e3e;
   color: #3e3e3e;
   font-weight: 500;
+  -webkit-transition: 0.2s ease-in;
+  transition: 0.2s ease-in;
+}
+.about .info p a:hover, .about .info p a:active {
+  color: #fb6470;
+  -webkit-text-decoration: underline 1px solid #fb6470;
+          text-decoration: underline 1px solid #fb6470;
 }
 .about img {
   position: absolute;
@@ -333,6 +344,7 @@ header.header__2.show {
       flex-wrap: wrap;
 }
 .portfolio_intro .portfolio .portfolio_item {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   margin: 60px 10px 0 10px;
   display: inline-block;
   position: relative;
@@ -455,6 +467,7 @@ header.header__2.show {
   width: 75.7%;
 }
 .contacts form input {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   border: 1px solid #353541;
   padding: 10px;
   font-weight: 500;
@@ -473,6 +486,7 @@ header.header__2.show {
   outline: 0;
 }
 .contacts form textarea {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   text-decoration: none;
   height: 90px;
   vertical-align: top;
@@ -497,6 +511,7 @@ header.header__2.show {
   outline: 0;
 }
 .contacts form .button {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   text-decoration: none;
   font-size: 16px;
   color: #fff;
@@ -560,6 +575,7 @@ header.header__2.show {
   margin: 5px;
 }
 .aligner .messangers .email .text a, .aligner .messangers .whatsapp .text a {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   margin: 5px;
   font-weight: 500;
   font-size: 14px;
@@ -568,7 +584,7 @@ header.header__2.show {
   -webkit-transition: 0.3s linear;
   transition: 0.3s linear;
 }
-.aligner .messangers .email .text a:hover, .aligner .messangers .whatsapp .text a:hover {
+.aligner .messangers .email .text a:hover, .aligner .messangers .email .text a:active, .aligner .messangers .whatsapp .text a:hover, .aligner .messangers .whatsapp .text a:active {
   color: #fb6470;
 }
 .aligner .messangers .whatsapp img {

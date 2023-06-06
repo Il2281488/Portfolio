@@ -39,6 +39,7 @@ $secondary_colorA: $pink;
 $secondary_colorB: $black;
 
 @mixin button($margin-top, $padding, $font-size, $border-radius, $padding-active){
+			-webkit-tap-highlight-color: rgba(0,0,0,0);
 			text-decoration: none;
 			font-size: $font-size;
 			color: #fff;
@@ -133,6 +134,8 @@ header.header{
 		height: 70px;
 		border-radius: 50%;
 
+		-webkit-tap-highlight-color: rgba(0,0,0,0);
+
 
 		.nav__toggle__inner{
 			position: absolute;
@@ -164,7 +167,6 @@ header.header{
 				top: -16px;
 			}
 		}
-		
 	}
 
 	.nav__toggle.visible{
@@ -192,6 +194,8 @@ header.header{
 			display: flex;
 			justify-content: space-between;
 			a{
+				-webkit-tap-highlight-color: rgba(0,0,0,0);
+				
 				text-decoration: none;
 				padding: 20px 25px;
 				color: #fff;
@@ -357,9 +361,17 @@ header.header__2.show{
 			}
 
 			a{ 
+				-webkit-tap-highlight-color: rgba(0,0,0,0);
+
 				text-decoration: underline 1px solid $secondary_colorB;
 				color: $secondary_colorB;
 				font-weight: 500;
+				transition: .2s ease-in;
+
+				&:hover, &:active{
+					color: $secondary_colorA;
+					text-decoration: underline 1px solid $secondary_colorA;
+				}
 			 }
 		}
 	}
@@ -395,6 +407,8 @@ header.header__2.show{
 		justify-content: space-around;
 		flex-wrap: wrap;
 		.portfolio_item{
+			-webkit-tap-highlight-color: rgba(0,0,0,0);
+
 			margin: 60px 10px 0 10px;
 			display: inline-block;
 			position:relative;
@@ -518,6 +532,8 @@ header.header__2.show{
 		
 
 		input{
+			-webkit-tap-highlight-color: rgba(0,0,0,0);
+
 			border: 1px solid $main_color;
 			padding: 10px;
 			font-weight: 500;
@@ -533,6 +549,9 @@ header.header__2.show{
 		}
 
 		textarea{
+			-webkit-tap-highlight-color: rgba(0,0,0,0);
+
+
 			text-decoration: none;
 			height: 90px;
 			vertical-align: top;
@@ -598,6 +617,8 @@ header.header__2.show{
 				}
 
 				a{
+				-webkit-tap-highlight-color: rgba(0,0,0,0);
+
 				margin: 5px;
 				font-weight: 500;
 				font-size: 14px;
@@ -605,7 +626,7 @@ header.header__2.show{
 				opacity: .8;
 				transition: .3s linear;
 
-					&:hover{
+					&:hover, &:active{
 						color: $secondary_colorA;
 					}
 				}

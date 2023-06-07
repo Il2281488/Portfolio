@@ -7,8 +7,6 @@ $( function() {
     let hasClassNavToggleVisible = $('.nav__toggle').hasClass('visible');
     let hasClassNavToggleActive = $('.nav__toggle').hasClass('active');
 
-    console.log (hasClassNavToggleVisible, $(window).width(), headerHeight)
-
 
 
 function onScroll () {

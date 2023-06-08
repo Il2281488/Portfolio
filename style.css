@@ -22,6 +22,7 @@ body {
   color: #3e3e3e;
   -webkit-font-smoothing: antialiased;
   background-color: #fff;
+  overflow-x: hidden;
 }
 
 .container {
@@ -46,7 +47,7 @@ p {
 }
 
 header.header {
-  background-color: #353541;
+  background-color: #408fde;
   border-bottom: 2px solid #fb6470;
   position: relative;
 }
@@ -64,7 +65,7 @@ header.header .nav__toggle {
   left: 30px;
   background: none;
   cursor: pointer;
-  background-color: #353541;
+  background-color: #408fde;
   border: 1px solid #fb6470;
   width: 70px;
   height: 70px;
@@ -158,7 +159,7 @@ header.header div nav.active {
       -ms-flex-direction: column;
           flex-direction: column;
   border: 2px solid #fb6470;
-  background-color: #353541;
+  background-color: #408fde;
   width: auto;
   top: 110px;
   left: 0;
@@ -195,10 +196,18 @@ header.header__2 {
       -ms-flex-pack: center;
           justify-content: center;
   position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
 }
 header.header__2 img {
-  max-width: 1300px;
-  max-height: 587px;
+  width: 100%;
+  max-width: 100%;
+  height: 587px;
+  -o-object-fit: none;
+     object-fit: none;
+  -o-object-position: 35% 0;
+     object-position: 35% 0;
 }
 header.header__2 .initials {
   position: absolute;
@@ -472,7 +481,7 @@ header.header__2.show {
 }
 .contacts form input {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  border: 1px solid #353541;
+  border: 1px solid #408fde;
   padding: 10px;
   font-weight: 500;
   font-size: 14px;
@@ -497,7 +506,7 @@ header.header__2.show {
   -ms-grid-column: 1;
       grid-column-start: 1;
   resize: none;
-  border: 1px solid #353541;
+  border: 1px solid #408fde;
   padding: 10px;
   font-weight: 500;
   font-size: 14px;
